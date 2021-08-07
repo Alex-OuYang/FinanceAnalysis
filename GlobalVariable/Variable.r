@@ -14,16 +14,19 @@ funcDBSelectstr=paste0(projectPathStr,"/Function/FuncDBSelect.r")
 funcStockInfoToTimeSerialstr=paste0(projectPathStr,"/Function/FuncStockInfoToTimeSerial.r")
 
 
+
 # Finance 參數
 stockno='2330'
 startDate="2021-01-01"
 endDate="2021-08-07"
 dateInterval=paste0(startDate,"/",endDate)
+stockclass="股票"
 
 # 連接 DB 參數
 sqlConnString = "driver={SQL Server};server=ALEX-NB\\SQLEXPRESS;database=Finance;;Trusted_Connection=Yes" 
 
 # SQL 語法
-sp_sqlstr="EXEC sp_GET_SECURITYINFO "
-
+sp_sqlstr_SECURITYINFO="EXEC sp_GET_SECURITYINFO "
+sp_sqlstr_COMPANYCLASS="EXEC sp_GET_COMPANYCLASS"
+sp_sqlstr_COMPANYLIST="EXEC sp_GET_COMPANYLIST "
 

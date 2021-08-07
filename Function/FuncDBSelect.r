@@ -23,3 +23,26 @@ funcDBSelect=function(sqlConnString,sp_sqlstr,param){
   # 回傳 DB 查詢結果
   return(queryResult)
 }
+
+funcDBSelectNoParam=function(sqlConnString,sp_sqlstr){
+  
+  # 使用 odbc driver 連接 SQL SERVER
+  sqlconnection=odbcDriverConnect(sqlConnString)
+  
+  # 組 查詢語法
+  sqlstr=paste0(sp_sqlstr)
+  
+  # 查詢結果
+  queryResult=sqlQuery(sqlconnection,sqlstr)
+  
+  # 關閉 DB 連線
+  odbcClose(sqlconnection)
+  
+  # 回傳 DB 查詢結果
+  return(queryResult)
+}
+
+
+
+
+
